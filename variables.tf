@@ -144,7 +144,7 @@ variable "eks_access_entries" {
 variable "eks_ami_type" {
   description = "Default AMI type for the EKS worker nodes"
   type        = string
-  default     = "AL2_x86_64"
+  default     = "BOTTLEROCKET_x86_64"
 }
 
 variable "eks_disk_size" {
@@ -399,10 +399,10 @@ variable "ecr_repository_type" {
   default     = "private"
 }
 
-variable "ecr_repository_name" {
-  description = "The name of the repository"
-  type        = string
-  default     = ""
+variable "ecr_names_map" {
+  type        = map(string)
+  default     = {}
+  description = "Map of repositories to create. Example: { r1 = \"myfirstrepo\", r2 = \"mysecondrepo\" }"
 }
 
 variable "ecr_repository_image_tag_mutability" {
