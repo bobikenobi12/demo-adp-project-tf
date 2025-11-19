@@ -35,6 +35,7 @@ eks_ng_capacity_type = "SPOT"
 eks_cluster_admins = [
   {
     "username" = "borislav.v.borisov.2021@elsys-bg.org"
+    "path"     = "/"
   }
 ]
 eks_access_entries = {
@@ -70,6 +71,7 @@ rds_allowed_cidr_blocks = [
 
 ]
 rds_backup_retention_period = 5
+rds_instance_type           = "db.serverless"
 sqs_username                = ""
 sqs_iam_role_name           = ""
 provision_sqs               = false

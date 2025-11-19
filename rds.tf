@@ -3,7 +3,7 @@ module "rds_maindb" {
 
   depends_on = [module.common_vpc]
 
-  source = "git::git@github.com:itgix/tf-module-rds.git?ref=v1.0.4"
+  source = "git::git@github.com:itgix/tf-module-rds.git?ref=v1.0.5"
 
   environment = var.environment
 
@@ -27,10 +27,8 @@ module "rds_maindb" {
     db_name        = var.rds_config.db_name
   })
 
-  rds_scaling_config = ({
-    min_capacity = var.rds_scaling_config.min_capacity
-    max_capacity = var.rds_scaling_config.max_capacity
-  })
+  rds_scaling_config = var.rds_scaling_config
+  rds_instance_type  = var.rds_instance_type
 
   rds_iam_auth_enabled = var.rds_iam_auth_enabled
   rds_default_username = var.rds_default_username
