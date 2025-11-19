@@ -1,6 +1,6 @@
 environment    = "min"
 region         = "eu-central-1"
-project_name   = "adp"
+project_name   = "diplom"
 aws_account_id = "787587782604"
 rds_iam_irsa   = true
 provision_vpc  = true
@@ -18,37 +18,21 @@ vpc_public_subnet_ids = [
 ]
 vpc_single_nat_gateway = true
 provision_eks          = true
-eks_cluster_version    = "1.31"
+eks_cluster_version    = "1.33"
 eks_instance_types = [
   "m5a.large"
 ]
 addons_versions = {
-  "coredns"    = "v1.11.4-eksbuild.14"
-  "kube_proxy" = "v1.31.9-eksbuild.2"
-  "vpc_cni"    = "v1.19.6-eksbuild.1"
-  "ebs_csi"    = "v1.38.1-eksbuild.1"
+  "coredns"    = "v1.12.4-eksbuild.1"
+  "kube_proxy" = "v1.33.3-eksbuild.10"
+  "vpc_cni"    = "v1.20.4-eksbuild.1"
+  "ebs_csi"    = "v1.51.1-eksbuild.1"
 }
 eks_ng_min_size      = 2
 eks_ng_desired_size  = 2
 eks_ng_max_size      = 4
 eks_ng_capacity_type = "SPOT"
 eks_cluster_admins = [
-  {
-    "username" = "ytodorov"
-  },
-  {
-    "username" = "mvukadinoff"
-  },
-  {
-    "username" = "htonev"
-  },
-  {
-    "username" = "tkazanova"
-    "path"     = "/"
-  },
-  {
-    "username" = "sracheva"
-  },
   {
     "username" = "borislav.v.borisov.2021@elsys-bg.org"
   }
@@ -200,7 +184,7 @@ redis_multi_az_enabled           = false
 redis_automatic_failover_enabled = false
 acm_certificate_enable           = true
 dns_hosted_zone                  = "Z2INQZ6AA9H9SI"
-dns_main_domain                  = "itgix.eu"
+dns_main_domain                  = "education.itgix.eu"
 enable_karpenter                 = true
 ec2_spot_service_role            = false
 custom_secrets = [
