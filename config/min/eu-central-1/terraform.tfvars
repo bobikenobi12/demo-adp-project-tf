@@ -186,14 +186,20 @@ redis_allowed_security_group_ids = [
 redis_allowed_cidr_blocks = [
   "10.56.0.0/16"
 ]
-redis_cloudwatch_logs_enabled    = true
-redis_multi_az_enabled           = false
-redis_automatic_failover_enabled = false
-acm_certificate_enable           = true
-dns_hosted_zone                  = "Z015674539OZ0Y1O3FL18"
-dns_main_domain                  = "education.itgix.eu"
-enable_karpenter                 = true
-ec2_spot_service_role            = false
+redis_cloudwatch_logs_enabled        = true
+redis_multi_az_enabled               = false
+redis_automatic_failover_enabled     = false
+create_elasticache_valkey            = false
+valkey_snapshot_time                 = "03:00"
+valkey_engine_version                = "7"
+valkey_data_storage_max              = 4
+valkey_ecpu_per_second_max           = 2000
+valkey_create_valkey_user_and_secret = true
+acm_certificate_enable               = true
+dns_hosted_zone                      = "Z015674539OZ0Y1O3FL18"
+dns_main_domain                      = "education.itgix.eu"
+enable_karpenter                     = true
+ec2_spot_service_role                = false
 custom_secrets = [
 
 ]
