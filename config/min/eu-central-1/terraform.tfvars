@@ -72,9 +72,12 @@ rds_allowed_cidr_blocks = [
 ]
 rds_backup_retention_period = 5
 rds_instance_type           = "db.serverless"
-sqs_username                = ""
-sqs_iam_role_name           = ""
-provision_sqs               = false
+rds_cluster_parameters = [
+
+]
+sqs_username      = ""
+sqs_iam_role_name = ""
+provision_sqs     = false
 sqs_queues = {
   "sample-service_queue" = {
     "sns_topic_name" = "sample_topic"

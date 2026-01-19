@@ -3,7 +3,7 @@ module "rds_maindb" {
 
   depends_on = [module.common_vpc]
 
-  source = "git::git@github.com:itgix/tf-module-rds.git?ref=v1.0.5"
+  source = "git::git@github.com:itgix/tf-module-rds.git?ref=v1.0.6"
 
   environment = var.environment
 
@@ -37,7 +37,9 @@ module "rds_maindb" {
 
   #enable_rds_s3_exports = var.enable_rds_s3_exports
 
-  rds_tags        = local.aws_default_tags
+  rds_tags = local.aws_default_tags
 
   rds_backup_retention_period = var.rds_backup_retention_period
+
+  rds_cluster_parameters = var.rds_cluster_parameters
 }
